@@ -65,6 +65,12 @@ The main goal of this project is to simulate a real academic student portal and 
 - Attendance tracking
 
 ---
+## 🙋‍♀️ About the Developer
 
+**Dhanashri Patil**  
+B.Tech IT Student – Usha Mittal Institute of Technology  
+Email: dhanajpatil20@gmail.com
+
+---
 
 
