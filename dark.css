@@ -1,0 +1,256 @@
+body.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .main {
+  background: #020617;
+}
+
+body.dark .card,
+body.dark .task-card,
+body.dark .chatbox,
+body.dark .setting-item {
+  background: #020617;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .task-meta,
+body.dark .card p,
+body.dark .settings-note {
+  color: #94a3b8;
+}
+
+body.dark .info-box {
+  background: linear-gradient(135deg, #1e293b, #020617);
+}
+
+body.dark .nav button {
+  color: #cbd5f5;
+}
+
+body.dark .nav button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .chat-messages .bot {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+body.dark .chat-messages .user {
+  background: #4f46e5;
+}
+
+body.dark .chat-input input {
+  background: #020617;
+  border: 1px solid #1e293b;
+  color: #e5e7eb;
+}
+
+body.dark .chat-input button {
+  background: #4f46e5;
+}
+
+body.dark .task-actions button {
+  background: #1e293b;
+}
+body.dark .student-card h3 {
+  color: #ffffff;
+}
+
+body.dark .student-card p {
+  color: #cbd5f5;
+}
+body.dark .student-card h3 {
+  color: #ffffff;
+}
+
+body.dark .student-card p {
+  color: #cbd5f5;
+}
+
+
+body.dark .chatbot-widget {
+  background: #020617;
+}
+
+body.dark .bot-msg {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+body.dark .chatbot-header {
+  background: #020617;
+}
+
+body.dark .chatbot-input input {
+  background: #020617;
+  color: #ffffff;
+  border: 1px solid #334155;
+}
+body.dark .exam-section h2 {
+  color: #ffffff;
+}
+
+body.dark .exam-table {
+  background: #020617;
+}
+
+body.dark .exam-table thead {
+  background: #0f172a;
+}
+
+body.dark .exam-table th {
+  color: #ffffff;
+}
+
+body.dark .exam-table td {
+  color: #e5e7eb;
+}
+
+body.dark .exam-table tbody tr:nth-child(even) {
+  background: #020617;
+}
+
+body.dark .exam-table tbody tr:hover {
+  background: #1e293b;
+}
+body.dark .assignment-card {
+  background: #020617;
+  color: #e5e7eb;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+body.dark .assignment-card h3 {
+  color: #ffffff;
+}
+
+body.dark .assignment-card p {
+  color: #cbd5f5;
+}
+
+body.dark .assignment-card.submitted {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+body.dark .doubt-card {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .doubt-input-box textarea {
+  background: #020617;
+  color: #ffffff;
+  border: 1px solid #334155;
+}
+body.dark .modal-content {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .modal-content h2,
+body.dark .modal-content h4 {
+  color: #ffffff;
+}
+
+body.dark .modal-content ul li,
+body.dark .modal-content p {
+  color: #cbd5f5;
+}
+
+body.dark .modal-content details summary {
+  color: #a5b4fc;
+}
+body.dark .marks-section h2 {
+  color: #ffffff;
+}
+
+body.dark .marks-table {
+  background: #020617;
+}
+
+body.dark .marks-table thead {
+  background: #0f172a;
+}
+
+body.dark .marks-table th {
+  color: #ffffff;
+}
+
+body.dark .marks-table td {
+  color: #e5e7eb;
+}
+
+body.dark .marks-table tbody tr {
+  background: #020617;
+}
+
+body.dark .marks-table tbody tr:nth-child(even) {
+  background: #0f172a;
+}
+
+body.dark .marks-table tbody tr:hover {
+  background: #1e293b;
+}
+body.dark .notification-card {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .notification-content p {
+  color: #cbd5f5;
+}
+body.dark .notif-badge {
+  background: #f87171;
+}
+/* 🔔 Notifications – Dark Mode Readability Fix */
+
+body.dark .notification-content p {
+  color: #e5e7eb;   /* bright readable text */
+}
+
+body.dark .notification-content h4 {
+  color: #ffffff;
+}
+
+body.dark .notification-card .time {
+  color: #cbd5f5;   /* readable but subtle */
+}
+
+/* unread vs read differentiation */
+body.dark .notification-card.read {
+  opacity: 0.75;
+}
+/* 🔔 Notification right-side text visibility fix */
+
+body.dark .notification-card {
+  color: #e5e7eb; /* base readable text */
+}
+
+body.dark .notification-card .notification-message,
+body.dark .notification-card .notification-desc,
+body.dark .notification-card p {
+  color: #f1f5f9; /* main readable content */
+}
+
+body.dark .notification-card .notification-time,
+body.dark .notification-card small {
+  color: #cbd5f5; /* time text */
+}
+body.dark .notification-card {
+  background: #020617;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+body.dark .notification-header h4 {
+  color: #ffffff;
+}
+
+body.dark .notification-text {
+  color: #cbd5f5;
+}
+
+body.dark .notification-time {
+  color: #94a3b8;
+}
