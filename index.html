@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AcademicFlow | Student Portal</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dark.css" />
+</head>
+
+<body>
+
+  <!-- LOGIN PAGE -->
+  <section id="loginPage" class="login-page">
+    <div class="login-card">
+      <h1>Usha Mittal Institute of Technology</h1>
+      <p class="campus">Juhu Campus, Mumbai</p>
+
+      <h2>Student Academic Portal</h2>
+
+      <input type="email" id="email" placeholder="Student Email" />
+      <input type="password" id="password" placeholder="Password" />
+<p id="passwordError" class="error-text hidden">
+  Password must be at least 8 characters
+</p>
+
+      <button onclick="login()">Login</button>
+
+      
+    </div>
+  </section>
+
+  <!-- MAIN APP -->
+  <div id="app" class="app hidden">
+
+    <aside class="sidebar">
+      <h2 class="logo">AcademicFlow</h2>
+
+     <nav class="nav">
+  <button onclick="showSection('dashboard')">Dashboard</button>
+  <button onclick="showSection('exams')">Examinations</button>
+  <button onclick="showSection('tasks')">Assignments</button>
+  <button onclick="showSection('doubts')">Doubts</button>
+  <button onclick="showSection('marks')">Marks / Grades</button>
+  <button onclick="showSection('notifications')">
+  Notifications <span id="notifBadge" class="notif-badge">6</span>
+</button>
+
+
+  <button onclick="showSection('settings')">Settings</button>
+
+</nav>
+
+
+
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+    </aside>
+
+    <main class="main">
+
+      <!-- DASHBOARD -->
+     <section id="dashboard" class="section active">
+  <h1>Student Dashboard</h1>
+
+  <div class="student-card">
+    <div>
+      <h3 id="studentName">Student Name</h3>
+      <p>B.Tech – Information Technology</p>
+      <p>Semester IV</p>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <p>Total Subjects</p>
+      <h2>10</h2>
+    </div>
+    <div class="card">
+      <p>Assignments Pending</p>
+      <h2 id="totalTasks">0</h2>
+    </div>
+    <div class="card">
+      <p>Upcoming Exams</p>
+      <h2 id="upcomingExams">0</h2>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h3>Academic Notice</h3>
+    <p>Mid-Semester examinations begin from 20 January.</p>
+  </div>
+
+  <div class="faculty-section">
+    <h2>Subjects & Faculty Allocation</h2>
+    <table class="faculty-table">
+      <thead>
+        <tr>
+          <th>Subject Code</th>
+          <th>Subject Name</th>
+          <th>Faculty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>IT401</td><td>Database Management Systems</td><td>Dr. Anjali Sharma</td></tr>
+        <tr><td>IT402</td><td>Object Oriented Programming</td><td>Prof. Rahul Mehta</td></tr>
+        <tr><td>IT403</td><td>Formal Languages & Automata</td><td>Dr. Neha Kulkarni</td></tr>
+        <tr><td>IT404</td><td>Java Programming</td><td>Prof. Suresh Iyer</td></tr>
+        <tr><td>IT405</td><td>Full Stack Development</td><td>Prof. Pooja Deshpande</td></tr>
+        <tr><td>IT406</td><td>System Software</td><td>Dr. Vinay Patil</td></tr>
+        <tr><td>IT407</td><td>Computer Architecture & Organization</td><td>Dr. Amit Joshi</td></tr>
+        <tr><td>IT408</td><td>Operating Systems</td><td>Prof. Rakesh Nair</td></tr>
+        <tr><td>IT409</td><td>Software Engineering</td><td>Dr. Sneha Rao</td></tr>
+        <tr><td>IT410</td><td>Data Structures & Algorithms</td><td>Prof. Kunal Shah</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="performance-section">
+    <h2>Academic Performance Overview</h2>
+
+    <div class="marks-card">
+      <div class="mark-item"><span>DBMS</span><div class="progress-bar"><div class="progress" style="width:78%">78%</div></div></div>
+      <div class="mark-item"><span>OOPS</span><div class="progress-bar"><div class="progress" style="width:82%">82%</div></div></div>
+      <div class="mark-item"><span>FLAT</span><div class="progress-bar"><div class="progress" style="width:74%">74%</div></div></div>
+      <div class="mark-item"><span>Java</span><div class="progress-bar"><div class="progress" style="width:85%">85%</div></div></div>
+      <div class="mark-item"><span>FSD</span><div class="progress-bar"><div class="progress" style="width:88%">88%</div></div></div>
+      <div class="mark-item"><span>OS</span><div class="progress-bar"><div class="progress" style="width:76%">76%</div></div></div>
+    </div>
+  </div>
+
+</section>
+
+  <section id="marks" class="section">
+  <h1>Marks & Grades</h1>
+<h2 style="margin-top:30px;">Subject-wise Performance</h2>
+
+<div class="marks-card">
+  <div class="mark-item">
+    <span>DBMS</span>
+    <div class="progress-bar">
+      <div class="progress" style="width:78%">78%</div>
+    </div>
+  </div>
+
+  <div class="mark-item">
+    <span>OOPS</span>
+    <div class="progress-bar">
+      <div class="progress" style="width:82%">82%</div>
+    </div>
+  </div>
+
+  <div class="mark-item">
+    <span>FLAT</span>
+    <div class="progress-bar">
+      <div class="progress" style="width:74%">74%</div>
+    </div>
+  </div>
+
+  <div class="mark-item">
+    <span>Java</span>
+    <div class="progress-bar">
+      <div class="progress" style="width:85%">85%</div>
+    </div>
+  </div>
+
+  <div class="mark-item">
+    <span>OS</span>
+    <div class="progress-bar">
+      <div class="progress" style="width:76%">76%</div>
+    </div>
+  </div>
+</div>
+
+<div class="info-box" style="margin-top:30px;">
+  <h3>Overall Academic Summary</h3>
+  <p>CGPA (Out of 10): <strong>8.2</strong></p>
+  <p>Performance Status: <strong>Very Good</strong></p>
+</div>
+
+  <div class="marks-section">
+    <h2>Internal Assessment</h2>
+
+    <table class="marks-table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Marks (100)</th>
+          <th>Grade</th>
+          <th>Faculty Remark</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>DBMS</td>
+          <td>78</td>
+          <td>B+</td>
+          <td>Good understanding</td>
+        </tr>
+        <tr>
+          <td>OOPS</td>
+          <td>82</td>
+          <td>A</td>
+          <td>Well structured answers</td>
+        </tr>
+        <tr>
+          <td>FLAT</td>
+          <td>74</td>
+          <td>B</td>
+          <td>Needs practice</td>
+        </tr>
+        <tr>
+          <td>Java</td>
+          <td>85</td>
+          <td>A+</td>
+          <td>Excellent performance</td>
+        </tr>
+        <tr>
+          <td>OS</td>
+          <td>76</td>
+          <td>B+</td>
+          <td>Concepts clear</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cgpa-box">
+  <h3>Estimated CGPA</h3>
+  <p id="cgpaValue">8.6</p>
+</div>
+
+</section>
+
+<section id="notifications" class="section">
+  <h1>Academic Notifications</h1>
+
+  <div class="notification-list">
+
+    <div class="notification-card">
+  <div class="notification-content">
+    <h4>📢 Mid-Semester Exams</h4>
+    <p>Mid-semester examinations start from <b>20 January 2026</b>.</p>
+    <span class="time">2 hours ago</span>
+  </div>
+
+  <div class="notification-actions">
+    <button onclick="markRead(this)">📌</button>
+    <button onclick="downloadPDF()">📄</button>
+  </div>
+</div>
+
+
+    <div class="notification-card">
+      <h4>📝 Assignment Deadline</h4>
+      <p>DBMS Assignment – Normalization due on <strong>25 January 2026</strong>.</p>
+      <span class="time">Today</span>
+    </div>
+
+    <div class="notification-card">
+      <h4>📚 Extra Lecture</h4>
+      <p>Extra Java lecture scheduled on <strong>18 January, 3–5 PM</strong>.</p>
+      <span class="time">Yesterday</span>
+    </div>
+
+    <div class="notification-card">
+      <h4>⚠ Attendance Notice</h4>
+      <p>Your attendance in <strong>FLAT</strong> is below 75%.</p>
+      <span class="time">2 days ago</span>
+    </div>
+
+    <div class="notification-card">
+      <h4>🎓 Result Update</h4>
+      <p>Internal assessment marks have been updated.</p>
+      <span class="time">3 days ago</span>
+    </div>
+
+    <div class="notification-card">
+      <h4>📌 Project Submission</h4>
+      <p>Mini Project Phase-1 submission on <strong>1 Feb 2026</strong>.</p>
+      <span class="time">4 days ago</span>
+    </div>
+
+    <div class="notification-card">
+  <div class="notification-content">
+    <h4>🎓 Faculty Announcement</h4>
+    <p>
+      <b>Dr. Anjali Sharma (DBMS):</b><br>
+      Assignment discussion will be done in next lecture.
+    </p>
+    <span class="time">Today</span>
+  </div>
+
+  <div class="notification-actions">
+    <button onclick="markRead(this)">📌</button>
+  </div>
+</div>
+<div class="notification-card unread">
+<div class="notification-card unread">
+  <div class="notification-header">
+    <span class="icon">📢</span>
+    <h4>Mid-Semester Exams</h4>
+  </div>
+
+  <p class="notification-text">
+    Mid-semester examinations start from <strong>20 January 2026</strong>.
+  </p>
+
+  <span class="notification-time">2 hours ago</span>
+</div>
+
+
+  </div>
+</section>
+
+
+
+
+      <!-- TASKS -->
+      <section id="tasks" class="section">
+  <h1>Assignments</h1>
+
+  <div class="assignment-grid">
+
+    <div class="assignment-card" onclick="openAssignment('dbms')">
+      <h3>DBMS – Normalization</h3>
+      <p>Faculty: Dr. Anjali Sharma</p>
+      <p>Due: 25 Jan 2026</p>
+      <span class="status pending">Pending</span>
+    </div>
+
+    <div class="assignment-card" onclick="openAssignment('oops')">
+      <h3>OOPS – Inheritance & Polymorphism</h3>
+      <p>Faculty: Prof. Rahul Mehta</p>
+      <p>Due: 27 Jan 2026</p>
+      <span class="status pending">Pending</span>
+    </div>
+
+    <div class="assignment-card submitted">
+      <h3>FLAT – DFA Construction</h3>
+      <p>Faculty: Dr. Neha Kulkarni</p>
+      <p>Submitted</p>
+      <span class="status done">Submitted</span>
+    </div>
+
+    <div class="assignment-card" onclick="openAssignment('java')">
+      <h3>Java – Exception Handling</h3>
+      <p>Faculty: Prof. Suresh Iyer</p>
+      <p>Due: 30 Jan 2026</p>
+      <span class="status pending">Pending</span>
+    </div>
+
+    <div class="assignment-card" onclick="openAssignment('os')">
+      <h3>OS – Process Scheduling</h3>
+      <p>Faculty: Prof. Rakesh Nair</p>
+      <p>Due: 1 Feb 2026</p>
+      <span class="status pending">Pending</span>
+    </div>
+
+    <div class="assignment-card" onclick="openAssignment('dbms')">
+  <h3>DBMS – Indexing & Hashing</h3>
+  <p>Faculty: Dr. Anjali Sharma</p>
+  <p>Due: 3 Feb 2026</p>
+  <span class="status pending">Pending</span>
+</div>
+
+<div class="assignment-card" onclick="openAssignment('oops')">
+  <h3>OOPS – Interfaces & Abstract Classes</h3>
+  <p>Faculty: Prof. Rahul Mehta</p>
+  <p>Due: 5 Feb 2026</p>
+  <span class="status pending">Pending</span>
+</div>
+
+<div class="assignment-card submitted">
+  <h3>FLAT – Regular Expressions</h3>
+  <p>Faculty: Dr. Neha Kulkarni</p>
+  <p>Submitted</p>
+  <span class="status done">Submitted</span>
+</div>
+
+<div class="assignment-card" onclick="openAssignment('java')">
+  <h3>Java – Multithreading</h3>
+  <p>Faculty: Prof. Suresh Iyer</p>
+  <p>Due: 7 Feb 2026</p>
+  <span class="status pending">Pending</span>
+</div>
+
+<div class="assignment-card" onclick="openAssignment('os')">
+  <h3>OS – Deadlocks</h3>
+  <p>Faculty: Prof. Rakesh Nair</p>
+  <p>Due: 9 Feb 2026</p>
+  <span class="status pending">Pending</span>
+</div>
+
+<div class="assignment-card submitted">
+  <h3>Software Engineering – SDLC Models</h3>
+  <p>Faculty: Dr. Sneha Rao</p>
+  <p>Submitted</p>
+  <span class="status done">Submitted</span>
+</div>
+
+<div class="assignment-card" onclick="openAssignment('cao')">
+  <h3>CAO – Instruction Pipelines</h3>
+  <p>Faculty: Dr. Amit Joshi</p>
+  <p>Due: 11 Feb 2026</p>
+  <span class="status pending">Pending</span>
+</div>
+
+<div class="assignment-card" onclick="openAssignment('ds')">
+  <h3>Data Structures – Trees</h3>
+  <p>Faculty: Prof. Kunal Shah</p>
+  <p>Due: 13 Feb 2026</p>
+  <span class="status pending">Pending</span>
+</div>
+
+<div class="assignment-card submitted">
+  <h3>Full Stack – HTML & CSS Layout</h3>
+  <p>Faculty: Prof. Pooja Deshpande</p>
+  <p>Submitted</p>
+  <span class="status done">Submitted</span>
+</div>
+
+<div class="assignment-card" onclick="openAssignment('ss')">
+  <h3>System Software – Assemblers</h3>
+  <p>Faculty: Dr. Vinay Patil</p>
+  <p>Due: 15 Feb 2026</p>
+  <span class="status pending">Pending</span>
+</div>
+
+  </div>
+</section>
+<section id="exams" class="section">
+  <h1>Examination Schedule</h1>
+
+  <div class="exam-section">
+    <table class="exam-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Subject</th>
+          <th>Exam Type</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>20 Jan 2026</td>
+          <td>Database Management Systems</td>
+          <td>Mid-Sem</td>
+          <td>10:00 AM – 12:00 PM</td>
+        </tr>
+        <tr>
+          <td>22 Jan 2026</td>
+          <td>Object Oriented Programming</td>
+          <td>Mid-Sem</td>
+          <td>10:00 AM – 12:00 PM</td>
+        </tr>
+        <tr>
+          <td>24 Jan 2026</td>
+          <td>Formal Languages & Automata</td>
+          <td>Mid-Sem</td>
+          <td>10:00 AM – 12:00 PM</td>
+        </tr>
+        <tr>
+          <td>26 Jan 2026</td>
+          <td>Java Programming</td>
+          <td>Mid-Sem</td>
+          <td>10:00 AM – 12:00 PM</td>
+        </tr>
+        <tr>
+          <td>28 Jan 2026</td>
+          <td>Operating Systems</td>
+          <td>Mid-Sem</td>
+          <td>10:00 AM – 12:00 PM</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="doubts" class="section">
+  <h1>Academic Doubts</h1>
+
+  <div class="doubt-input-box">
+    <textarea id="doubtInput" placeholder="Post your academic doubt here..."></textarea>
+    <button onclick="postDoubt()">Submit Doubt</button>
+  </div>
+
+  <div id="doubtList" class="doubt-list">
+
+    <div class="doubt-card">
+      <p class="doubt-text">
+        Can you explain normalization with a real-life example?
+      </p>
+      <span class="doubt-status pending">Pending – Will be addressed in DBMS lecture</span>
+    </div>
+
+    <div class="doubt-card resolved">
+      <p class="doubt-text">
+        Difference between inheritance and composition?
+      </p>
+      <span class="doubt-status done">Addressed by faculty</span>
+    </div>
+
+  </div>
+</section>
+
+      <!-- CHATBOT -->
+      <section id="chatbot" class="section">
+        <h1>Academic Assistant</h1>
+
+        <div class="chatbox">
+          <div id="chatMessages" class="chat-messages">
+            <div class="bot">Hello! How can I assist you today?</div>
+          </div>
+
+          <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Ask about exams, tasks, subjects..." />
+            <button onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section id="settings" class="section">
+        <h1>Settings</h1>
+
+        <div class="setting-item">
+          <span>Dark Mode</span>
+          <label class="switch">
+            <input type="checkbox" id="themeToggle" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <!-- FONT SIZE SETTING -->
+<div class="setting-item">
+  <span>Font Size</span>
+  <select id="fontSizeSelect">
+    <option value="small">Small</option>
+    <option value="medium" selected>Medium</option>
+    <option value="large">Large</option>
+  </select>
+</div>
+
+<!-- NOTIFICATION SETTINGS -->
+<div class="setting-item">
+  <span>Exam Notifications</span>
+  <label class="switch">
+    <input type="checkbox" checked />
+    <span class="slider"></span>
+  </label>
+</div>
+
+<div class="setting-item">
+  <span>Assignment Reminders</span>
+  <label class="switch">
+    <input type="checkbox" checked />
+    <span class="slider"></span>
+  </label>
+</div>
+
+<!-- RESET BUTTON -->
+<div class="setting-item">
+  <span>Reset Dashboard</span>
+  <button onclick="resetDashboard()">Reset</button>
+</div>
+
+<p class="settings-note">
+  Changes are saved automatically.
+</p>
+
+      </section>
+
+    </main>
+  </div>
+
+
+  <script src="js/auth.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/chatbot.js"></script>
+
+<div id="chatbotWidget" class="chatbot-widget hidden">
+  <div class="chatbot-header">
+    <span>Academic Assistant</span>
+    <button onclick="toggleChatbot()">×</button>
+  </div>
+
+  <div id="floatingChatMessages" class="chatbot-messages">
+    <div class="bot-msg">Hello! How can I help you today?</div>
+  </div>
+
+  <div class="chatbot-input">
+    <input
+      type="text"
+      id="floatingChatInput"
+      placeholder="Ask about exams, assignments..."
+    />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<button
+  id="chatbotToggle"
+  class="chatbot-toggle hidden"
+  onclick="toggleChatbot()"
+>
+  💬
+</button>
+
+
+<div id="assignmentModal" class="modal hidden">
+  <div class="modal-content">
+    <h2 id="assignmentTitle"></h2>
+
+    <h4>Questions</h4>
+    <ul id="assignmentQuestions"></ul>
+
+    <details>
+      <summary>Hints (Click to view)</summary>
+      <p id="assignmentHint"></p>
+    </details>
+
+    <button onclick="closeAssignment()">Close</button>
+  </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
