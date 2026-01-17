@@ -67,5 +67,4 @@ The main goal of this project is to simulate a real academic student portal and 
 ---
 
 
-## 🔹 Project Structure
 
